@@ -10,7 +10,7 @@
 
  <table align="center">
   <tr>
-    <td><img src="images/figures/fig1_3d_recon.png" width="800" height="400"></td>
+    <td><img src="figures/fig1_3d_recon.png" width="800" ></td>
   </tr>
   <tr>
     <td>图1-三维重建方式分类</td>
