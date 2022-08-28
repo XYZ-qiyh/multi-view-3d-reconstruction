@@ -7,7 +7,7 @@
 
  <table align="center">
   <tr>
-    <td><img src="figures/fig1_3d_recon.png" width="800" ></td>
+    <td><img src="figures/fig1_3d_recon.png" width="600" ></td>
   </tr>
   <tr>
     <td>图1-三维重建方式分类</td>
@@ -24,19 +24,18 @@
 
 1.2 基于图像的三维重建
 
-基于图像的三维重建根据输入视图数可分为：单目深度估计、双目立体视觉和多视角三维重建
+基于图像的三维重建根据输入视图数可分为：单目深度估计、双目立体匹配和多视图三维重建
 
-Results: 
  <table align="center">
   <tr>
-    <td><img src="results/cat1.jpg" width="400"></td>
-    <td><img src="results/dog1.jpg" width="400"></td>    
-    <td><img src="results/dog1.jpg" width="400"></td>
+    <td><img src="figures/fig2_mono_depth_est.png" width="500"></td>
+    <td><img src="figures/fig3_stereo_disparity.jpg" width="500"></td>    
+    <td><img src="figures/fig4_multi-view_stereo.jpg" width="500"></td>
   </tr>
   <tr>
-    <td>./results/cat1.jpg</td>
-    <td>./results/dog1.jpg</td>    
-    <td>./results/dog1.jpg</td>
+    <td>单目深度估计</td>
+    <td>双目立体匹配</td>    
+    <td>多视图三维重建</td>
   </tr>
 </table>
 
