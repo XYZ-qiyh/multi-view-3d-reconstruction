@@ -67,9 +67,26 @@
 ## 二、数据集与评测指标
 2.1 多视图三维重建数据集
 
-2.2 多视图三维重建评测指标
 
+ <table align="center">
+  <tr>
+    <td><img src="figures/datasets/DTU_scan83.png" width="500"></td>
+    <td><img src="figures/datasets/TT_Truck.jpg" width="500"></td>    
+    <td><img src="figures/datasets/ETH3D_courtyard.JPG" width="500"></td>
+  </tr>
+  <tr>
+    <td>DTU_scan83</td>
+    <td>Tanks and Temples_Truck</td>    
+    <td>ETH3D_courtyard</td>
+  </tr>
+</table>
+
+
+2.2 多视图三维重建评测指标
 <!--
++ dist
++ F1 score
+
 ### 场景数据集与评测指标
 2.1 简单谈一下输入图像采集
 物体/场景
