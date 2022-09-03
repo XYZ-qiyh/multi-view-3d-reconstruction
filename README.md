@@ -65,8 +65,14 @@
 + 表面重建
 
 ## 二、数据集与评测指标
-2.1 多视图三维重建数据集
-
+### 2.1 多视图三维重建数据集
+多视图三维重建（此处指MVS）常用数据集包括**DTU**、**Tanks and Temples**和**ETH3D**，以及用于深度学习网络模型训练的**BlendedMVS**。具体内容可以参考[multi-view-stereo-benchmark](https://github.com/XYZ-qiyh/Awesome-Learning-MVS#multi-view-stereo-benchmark)
+<!--
++ DTU
++ Tanks and Temples
++ ETH3D
++ BlendedMVS
+--->
 
  <table align="center">
   <tr>
@@ -82,14 +88,15 @@
 </table>
 
 
-2.2 多视图三维重建评测指标
-<!--
-+ dist
-+ F1 score
+### 2.2 多视图三维重建评测指标
+为了评价三维点云重建的性能，使用F-score或平均绝对误差距离指标来定性评价重建结果的准确性和完整性。
++ F-score的计算可以参考https://tanksandtemples.org/tutorial/
++ 平均绝对误差距离的计算可参考Yao Yao MVSNet paper
 
-### 场景数据集与评测指标
-2.1 简单谈一下输入图像采集
-物体/场景
 
-### 运动恢复结构
---->
+## 三、运动恢复结构
+
+### 3.1 对应点搜索
+
+### 3.2 增量式重建
+
