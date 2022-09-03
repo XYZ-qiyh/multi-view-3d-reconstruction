@@ -90,7 +90,7 @@
 
 ### 2.2 多视图三维重建评测指标
 为了评价三维点云重建的性能，使用F-score或平均绝对误差距离指标来定性评价重建结果的准确性和完整性。
-+ F-score的计算可以参考https://tanksandtemples.org/tutorial/
++ F-score的计算可以参考 [Tanks and Temples Tutorial](https://tanksandtemples.org/tutorial/) (Appendix B. Compute F-score)
 + 平均绝对误差距离的计算可参考Yao Yao MVSNet paper
 
 
