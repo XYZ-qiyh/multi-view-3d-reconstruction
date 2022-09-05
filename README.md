@@ -73,6 +73,7 @@
 + ETH3D
 + BlendedMVS
 --->
+数据分类：室内物体、室内场景、室外物体、室外场景
 
  <table align="center">
   <tr>
@@ -111,22 +112,14 @@
 
 
 
-<!--
-### 3.1 对应点搜索
-它通常从特征提取和匹配开始，然后是几何验证来消除误匹配点对。
-
-### 3.2 增量式重建
-
-### 3.3 SfM拓展学习
---->
 
 ### SfM拓展学习
 1. 增量式SfM发展史：[Bundler](https://www.cs.cornell.edu/~snavely/bundler/) --> [Visual SfM](http://ccwu.me/vsfm/index.html) --> [COLMAP](https://colmap.github.io/)
 2. 全局式SfM相关资料：[OpenMVG](https://github.com/openMVG/openMVG) --> [DAGSfM](https://github.com/AIBluefisher/DAGSfM)
 3. 超大规模SfM 港科大权龙教授课题组工作
 4. colmap与深度学习结合的工作：[pixel-perfect-sfm](https://psarlin.com/pixsfm/)
-5. 纯深度学习做SfM的工作
-6. 重复纹理场景下的SfM
+5. 纯深度学习做SfM的工作：[BANet](https://github.com/frobelbest/BANet)、[DeepSFM](https://github.com/weixk2015/DeepSFM)
+6. 重复纹理场景下的SfM：[sfm-disambiguation-colmap](https://github.com/cvg/sfm-disambiguation-colmap)
 7. 非刚体SfM
 
 
