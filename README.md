@@ -121,6 +121,11 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 增量式SfM首先从输入图像的特征点提取开始，由于SIFT特征具有尺度和几何不变性等特点，因此通常使用SIFT描述符来匹配不同图像之间的特征点，生成若干组可能的匹配点对。然后使用随机采样一致性（RANdom SAmple Consensus，RANSAC）策略来鲁棒地估计图像对之间的本质矩阵(Essential Matrix)，并剔除错误的匹配点对。在增量式重建阶段，从精心选取的两视图重建开始，通过图像配准和三角化不断地添加新视图和3D点。如果不进一步细化，SfM通常会迅速漂移到不可恢复的状态。考虑到过程中的误差累积，使用光束法平差（Bundle Adjustment, BA）对相机位姿和稀疏点位置进行优化，来最小化稀疏3D点在不同视角图像中的重投影误差。
 
 ### 3.1 特征点提取与匹配
+<!--
+特征点提取与匹配是SfM或SLAM中的一项
+--->
+基于稀疏特征点的方法是SLAM或VIO技术的标准，因为他们速度快、精度高。 “先检测再描述”是最常见的稀疏特征提取方法，具体地，首先检测特征点，然后对该特征点周围的块进行描述。描述子封装了更高级别的信息，这些信息被低级别的关键点所忽略。在深度学习之前，SIFT和ORB特征点被广泛用于低级别视觉任务的特征匹配描述子。而随着深度学习的出现，在很多的应用中取代了这些手工设计的特征。近年来，出现了SuperPoint、LIFT和GIFT等相关工作。
+https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57
 
 
 ### SfM拓展学习
@@ -130,7 +135,11 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 4. colmap与深度学习结合的工作：[pixel-perfect-sfm](https://psarlin.com/pixsfm/)
 5. 纯深度学习做SfM的工作：[BANet](https://github.com/frobelbest/BANet)、[DeepSFM](https://github.com/weixk2015/DeepSFM)
 6. 重复纹理场景下的SfM：[sfm-disambiguation-colmap](https://github.com/cvg/sfm-disambiguation-colmap)
-7. 非刚体SfM
+7. SfM与GPS信息结合：[colmap-gps](https://github.com/Vincentqyw/colmap-gps)
+8. 非刚体SfM
 
 
+## 四、多视图立体匹配
 
+
+## 五、表面重建
