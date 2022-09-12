@@ -66,6 +66,7 @@
 
 ## 二、数据集与评测指标
 ### 2.1 多视图三维重建数据集
+#### 2.1.1 公开数据集
 多视图三维重建（此处指MVS）常用数据集包括**DTU**、**Tanks and Temples**和**ETH3D**，以及用于深度学习网络模型训练的**BlendedMVS**。具体内容可以参考[multi-view-stereo-benchmark](https://github.com/XYZ-qiyh/Awesome-Learning-MVS#multi-view-stereo-benchmark)
 <!--
 + DTU
@@ -73,7 +74,6 @@
 + ETH3D
 + BlendedMVS
 --->
-数据分类：室内物体、室内场景、室外物体、室外场景
 
  <table align="center">
   <tr>
@@ -89,10 +89,20 @@
 </table>
 
 
-### 2.2 多视图三维重建评测指标
+#### 2.1.2 多视图三维重建评测指标
 为了评价三维点云重建的性能，使用F-score或平均绝对误差距离指标来定性评价重建结果的准确性和完整性。
 + F-score的计算可以参考 [Tanks and Temples Tutorial](https://tanksandtemples.org/tutorial/) (Appendix B. Compute F-score)
-+ 平均绝对误差距离的计算可参考Yao Yao MVSNet paper
++ Overall Score的计算可参考 [Yao et al MVSNet paper](https://openaccess.thecvf.com/content_ECCV_2018/papers/Yao_Yao_MVSNet_Depth_Inference_ECCV_2018_paper.pdf) (Sec 5.1 Benchmarking on DTU dataset)
+
+
+### 2.2 真实场景中的三维重建
+数据分类：室内物体、室内场景、室外物体、室外场景
+
+对于物体类型的重建，推荐使用基于深度学习的**PlaneSweeping**方法；而对于大规模场景的重建，传统**PatchMatch**方法的泛化性更佳
+
+https://github.com/ethan-li-coding/Datasets-of-MVS-reconstruction
+
+https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 
 
 ## 三、运动恢复结构
