@@ -26,7 +26,7 @@
 
 ### 1.2 基于图像的三维重建
 
-基于图像的三维重建根据输入视图数可分为：单目深度估计、双目立体匹配和多视图三维重建。具体到每一种方式，如果三维重建是以恢复场景几何结构为目标，那么单目深度估计的深度图如果没有施加多视图的几何一致性（连续性）约束的话，那么重建三维几何的质量无法保证；而双目立体匹配计算的深度和双目相机的焦距和基线有关，如果需要获得较大的深度感知范围，则需要很大的基线距离，因此限制了双目立体匹配的应用范围。多视图立体匹配的输入图像为多幅单目图像，通过多视图之间的相似性搜索进行深度图的预测。多视图立体匹配的图像无需进行校正， 图像采集成本低，适用范围广， 因此多视图立体匹配广泛应用于各种场景的三维模型重建中。
+基于图像的三维重建根据输入视图数可分为：**单目深度估计**、**双目立体匹配**和**多视图三维重建**。具体到每一种方式，如果三维重建是以恢复场景几何结构为目标，那么单目深度估计的深度图如果没有施加多视图的几何一致性（连续性）约束的话，那么重建三维几何的质量无法保证；而双目立体匹配计算的深度和双目相机的焦距和基线有关，如果需要获得较大的深度感知范围，则需要很大的基线距离，因此限制了双目立体匹配的应用范围。多视图立体匹配的输入图像为多幅单目图像，通过多视图之间的相似性搜索进行深度图的预测。多视图立体匹配的图像无需进行校正， 图像采集成本低，适用范围广， 因此多视图立体匹配广泛应用于各种场景的三维模型重建中。
 
  <table align="center">
   <tr>
@@ -45,9 +45,15 @@
  + 单目深度估计
  + 双目立体匹配： `depth=f·b/disp`, 式中f为focal length(焦距)，b为baseline(基线)，深度探测范围受限于相机之间的基线距离
  + 多视图三维重建
+ 
+ QA: **Stereo Matching和MVS的区别**
+
++ 数据获取：立体匹配通常使用双目相机进行拍摄，而MVS采集的数据通常为相机在不同视角下拍摄的多视角图像（或在连续视频流中采样得到的视频帧）
++ 输入视图数：顾名思义，立体匹配的输入为两幅（校正后的）图像，计算视差后通过相机基线 *b* 和焦距 *f*  将视差 *disparity* 转为深度值 *depth*
++ 更具体地，MVS的步骤中涉及视图选择，即选取哪些邻域视图用于相似性搜索（图像之间的夹角以及稀疏点之间的重叠度）。
 
 ### 1.3 基于多视角图像的三维重建
-基于多视角图像进行三维重建的流程为：输入多视角采集的图像，输出对应场景的三维几何模型（点云/表面网格）。通常步骤包括：输入图像采集、运动恢复结构（Structure-from-Motion, SfM）、多视图立体匹配（Multi-view Stereo, MVS）和表面重建等步骤。
+基于多视角图像进行三维重建的流程为：输入多视角采集的图像，输出对应场景的三维几何模型（点云/表面网格）。通常步骤包括：**输入图像采集**、**运动恢复结构**（Structure-from-Motion, SfM）、**多视图立体匹配**（Multi-view Stereo, MVS）和**表面重建**等步骤。
 
 
  <table align="center">
@@ -60,6 +66,8 @@
 </table> 
 
 + 输入图像采集
+  + 使用相机在不同视角下采集的图像
+  + 从视频序列中采样得到的图像 https://github.com/cansik/sharp-frame-extractor
 + 运动恢复结构
 + 多视图立体匹配
 + 表面重建
@@ -120,12 +128,25 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 
 增量式SfM首先从输入图像的特征点提取开始，由于SIFT特征具有尺度和几何不变性等特点，因此通常使用SIFT描述符来匹配不同图像之间的特征点，生成若干组可能的匹配点对。然后使用随机采样一致性（RANdom SAmple Consensus，RANSAC）策略来鲁棒地估计图像对之间的本质矩阵(Essential Matrix)，并剔除错误的匹配点对。在增量式重建阶段，从精心选取的两视图重建开始，通过图像配准和三角化不断地添加新视图和3D点。如果不进一步细化，SfM通常会迅速漂移到不可恢复的状态。考虑到过程中的误差累积，使用光束法平差（Bundle Adjustment, BA）对相机位姿和稀疏点位置进行优化，来最小化稀疏3D点在不同视角图像中的重投影误差。
 
-### 3.1 特征点提取与匹配
-<!--
-特征点提取与匹配是SfM或SLAM中的一项
---->
++ 论文：[Structure-from-Motion Revisited](https://openaccess.thecvf.com/content_cvpr_2016/papers/Schonberger_Structure-From-Motion_Revisited_CVPR_2016_paper.pdf)
+
++ 代码：[colmap/colmap: COLMAP - Structure-from-Motion and Multi-View Stereo (github.com)](https://github.com/colmap/colmap)
+
++ 讲解：[三维重建系列之COLMAP: Structure-from-Motion Revisited](https://mp.weixin.qq.com/s/L8xABwv5O5i9-2u2UZKRZg)
+
+
+### 特征点提取与匹配
+
 基于稀疏特征点的方法是SLAM或VIO技术的标准，因为他们速度快、精度高。 “先检测再描述”是最常见的稀疏特征提取方法，具体地，首先检测特征点，然后对该特征点周围的块进行描述。描述子封装了更高级别的信息，这些信息被低级别的关键点所忽略。在深度学习之前，SIFT和ORB特征点被广泛用于低级别视觉任务的特征匹配描述子。而随着深度学习的出现，在很多的应用中取代了这些手工设计的特征。近年来，出现了SuperPoint、LIFT和GIFT等相关工作。
-https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57
+
+常见的特征点：
++ SIFT [[PythonSIFT](https://github.com/rmislam/PythonSIFT)] [Tutorial](https://www.aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) [Code](https://github.com/aishack/sift/blob/master/SIFT.h) [Code2](https://github.com/Daksh-404/sift)
++ ORB
++ SuperPoint [[paper](https://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w9/DeTone_SuperPoint_Self-Supervised_Interest_CVPR_2018_paper.pdf)] [[blog](https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57)] https://vincentqin.tech/posts/superpoint/
+
+
+### QA：SfM与vSLAM的区别与联系
+
 
 
 ### SfM拓展学习
@@ -136,10 +157,16 @@ https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-poin
 5. 纯深度学习做SfM的工作：[BANet](https://github.com/frobelbest/BANet)、[DeepSFM](https://github.com/weixk2015/DeepSFM)
 6. 重复纹理场景下的SfM：[sfm-disambiguation-colmap](https://github.com/cvg/sfm-disambiguation-colmap)
 7. SfM与GPS信息结合：[colmap-gps](https://github.com/Vincentqyw/colmap-gps)
-8. 非刚体SfM
+8. 非刚体SfM：A Simple Prior-free Method for Non-Rigid Structure-from-Motion Factorization
 
 
 ## 四、多视图立体匹配
+
++ PlaneSweeping
+
++ PatchMatch
+
++ DeepLearning
 
 
 ## 五、表面重建
