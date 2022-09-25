@@ -155,9 +155,12 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 基于稀疏特征点的方法是SLAM或VIO技术的标准，因为他们速度快、精度高。 “先检测再描述”是最常见的稀疏特征提取方法，具体地，首先检测特征点，然后对该特征点周围的块进行描述。描述子封装了更高级别的信息，这些信息被低级别的关键点所忽略。在深度学习之前，SIFT和ORB特征点被广泛用于低级别视觉任务的特征匹配描述子。而随着深度学习的出现，在很多的应用中取代了这些手工设计的特征。近年来，出现了SuperPoint、LIFT和GIFT等相关工作。
 
 常见的特征点：
-+ SIFT [[PythonSIFT](https://github.com/rmislam/PythonSIFT)] [Tutorial](https://www.aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) [Code](https://github.com/aishack/sift/blob/master/SIFT.h) [Code2](https://github.com/Daksh-404/sift)
++ SIFT 
 + ORB
-+ SuperPoint [[paper](https://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w9/DeTone_SuperPoint_Self-Supervised_Interest_CVPR_2018_paper.pdf)] [[blog](https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57)] https://vincentqin.tech/posts/superpoint/
++ SuperPoint: Self-Supervised Interest Point Detection and Description [[paper](https://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w9/DeTone_SuperPoint_Self-Supervised_Interest_CVPR_2018_paper.pdf)] [[Github](https://github.com/rpautrat/SuperPoint)]
+<!--[[PythonSIFT](https://github.com/rmislam/PythonSIFT)] [Tutorial](https://www.aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) [Code](https://github.com/aishack/sift/blob/master/SIFT.h) [Code2](https://github.com/Daksh-404/sift)--->
+<!-- [[blog](https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57)] https://vincentqin.tech/posts/superpoint/
+--->
 
 ### 图像配准
 Starting from a metric reconstruction, new images can be registered to the current model by solving the Perspective-n-Point (PnP) problem [18] using feature correspondences to triangulated points in already registered images (2D-3D correspondences).
