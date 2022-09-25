@@ -73,7 +73,18 @@
 + 表面重建
 
 ### 1.4 多视图几何基础
-相机内外参
+
+ <table align="center">
+  <tr>
+    <td><img src="figures/camera/camera_pinhole.png" width="350"></td>
+    <td><img src="figures/camera/camera_extrinsic.png" width="500"></td>    
+  </tr>
+  <tr>
+    <td>针孔相机模型（视觉SLAM十四讲）</td>
+    <td>相机外参</td>    
+  </tr>
+</table>
+
 
 ## 二、数据集与评测指标
 ### 2.1 多视图三维重建数据集
@@ -153,14 +164,15 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 
 
 ### SfM拓展学习
-1. 增量式SfM发展史：[Bundler](https://www.cs.cornell.edu/~snavely/bundler/) --> [Visual SfM](http://ccwu.me/vsfm/index.html) --> [COLMAP](https://colmap.github.io/)
-2. 全局式SfM相关资料：[OpenMVG](https://github.com/openMVG/openMVG) --> [DAGSfM](https://github.com/AIBluefisher/DAGSfM)
-3. 超大规模SfM 港科大权龙教授课题组工作
-4. colmap与深度学习结合的工作：[pixel-perfect-sfm](https://psarlin.com/pixsfm/)
-5. 纯深度学习做SfM的工作：[BANet](https://github.com/frobelbest/BANet)、[DeepSFM](https://github.com/weixk2015/DeepSFM)
-6. 重复纹理场景下的SfM：[sfm-disambiguation-colmap](https://github.com/cvg/sfm-disambiguation-colmap)
-7. SfM与GPS信息结合：[colmap-gps](https://github.com/Vincentqyw/colmap-gps)
-8. 非刚体SfM：A Simple Prior-free Method for Non-Rigid Structure-from-Motion Factorization
+
++ 增量式SfM发展史：[Bundler](https://www.cs.cornell.edu/~snavely/bundler/) --> [Visual SfM](http://ccwu.me/vsfm/index.html) --> [COLMAP](https://colmap.github.io/)
++ 全局式SfM相关资料：[OpenMVG](https://github.com/openMVG/openMVG) --> [DAGSfM](https://github.com/AIBluefisher/DAGSfM)
++ 超大规模SfM 港科大权龙教授课题组工作
++ colmap与深度学习结合的工作：[pixel-perfect-sfm](https://psarlin.com/pixsfm/)
++ 纯深度学习做SfM的工作：[BANet](https://github.com/frobelbest/BANet)、[DeepSFM](https://github.com/weixk2015/DeepSFM)
++ 重复纹理场景下的SfM：[sfm-disambiguation-colmap](https://github.com/cvg/sfm-disambiguation-colmap)
++ SfM与GPS信息结合：[colmap-gps](https://github.com/Vincentqyw/colmap-gps)
++ 非刚体SfM：A Simple Prior-free Method for Non-Rigid Structure-from-Motion Factorization
 
 
 ## 四、多视图立体匹配
