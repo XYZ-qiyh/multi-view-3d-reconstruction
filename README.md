@@ -46,7 +46,7 @@
  + 双目立体匹配： `depth=f·b/disp`, 式中f为focal length(焦距)，b为baseline(基线)，深度探测范围受限于相机之间的基线距离
  + 多视图三维重建
  
- QA: **Stereo Matching和MVS的区别**
+ **QA: Stereo Matching和MVS的区别**
 
 + 数据获取：立体匹配通常使用双目相机进行拍摄，而MVS采集的数据通常为相机在不同视角下拍摄的多视角图像（或在连续视频流中采样得到的视频帧）
 + 输入视图数：顾名思义，立体匹配的输入为两幅（校正后的）图像，计算视差后通过相机基线 *b* 和焦距 *f*  将视差 *disparity* 转为深度值 *depth*
@@ -146,8 +146,9 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 
 + 代码：[colmap/colmap: COLMAP - Structure-from-Motion and Multi-View Stereo (github.com)](https://github.com/colmap/colmap)
 
-+ 讲解：[三维重建系列之COLMAP: Structure-from-Motion Revisited](https://mp.weixin.qq.com/s/L8xABwv5O5i9-2u2UZKRZg)
++ 博客：[三维重建系列之COLMAP: Structure-from-Motion Revisited](https://mp.weixin.qq.com/s/L8xABwv5O5i9-2u2UZKRZg)
 
++ 图解：[Structure-from-Motion](./SfM/Structure-from-Motion.pdf) (节选自pixel-perfect-sfm)
 
 ### 特征点提取与匹配
 
@@ -157,6 +158,11 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 + SIFT [[PythonSIFT](https://github.com/rmislam/PythonSIFT)] [Tutorial](https://www.aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) [Code](https://github.com/aishack/sift/blob/master/SIFT.h) [Code2](https://github.com/Daksh-404/sift)
 + ORB
 + SuperPoint [[paper](https://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w9/DeTone_SuperPoint_Self-Supervised_Interest_CVPR_2018_paper.pdf)] [[blog](https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57)] https://vincentqin.tech/posts/superpoint/
+
+### 图像配准
+Starting from a metric reconstruction, new images can be registered to the current model by solving the Perspective-n-Point (PnP) problem [18] using feature correspondences to triangulated points in already registered images (2D-3D correspondences).
+
+PnP（Perspective-n-Point）是求解 3D 到 2D 点对运动的方法。它描述了当我们知道n 个 3D 空间点以及它们的投影位置时，如何估计相机所在的位姿。
 
 
 ### QA：SfM与vSLAM的区别与联系
