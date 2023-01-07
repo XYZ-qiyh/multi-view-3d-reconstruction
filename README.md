@@ -142,6 +142,8 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 
 增量式SfM首先从输入图像的特征点提取开始，由于SIFT特征具有尺度和几何不变性等特点，因此通常使用SIFT描述符来匹配不同图像之间的特征点，生成若干组可能的匹配点对。然后使用随机采样一致性（RANdom SAmple Consensus，RANSAC）策略来鲁棒地估计图像对之间的本质矩阵(Essential Matrix)，并剔除错误的匹配点对。在增量式重建阶段，从精心选取的两视图重建开始，通过图像配准和三角化不断地添加新视图和3D点。如果不进一步细化，SfM通常会迅速漂移到不可恢复的状态。考虑到过程中的误差累积，使用光束法平差（Bundle Adjustment, BA）对相机位姿和稀疏点位置进行优化，来最小化稀疏3D点在不同视角图像中的重投影误差。
 
+<!--
+
 + 论文：[Structure-from-Motion Revisited](https://openaccess.thecvf.com/content_cvpr_2016/papers/Schonberger_Structure-From-Motion_Revisited_CVPR_2016_paper.pdf)
 
 + 代码：[colmap/colmap: COLMAP - Structure-from-Motion and Multi-View Stereo (github.com)](https://github.com/colmap/colmap)
@@ -158,9 +160,9 @@ https://github.com/XYZ-qiyh/Awesome-Learning-MVS#large-scale-real-world-scenes
 + SIFT 
 + ORB
 + SuperPoint: Self-Supervised Interest Point Detection and Description [[paper](https://openaccess.thecvf.com/content_cvpr_2018_workshops/papers/w9/DeTone_SuperPoint_Self-Supervised_Interest_CVPR_2018_paper.pdf)] [[Github](https://github.com/rpautrat/SuperPoint)]
-<!--[[PythonSIFT](https://github.com/rmislam/PythonSIFT)] [Tutorial](https://www.aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) [Code](https://github.com/aishack/sift/blob/master/SIFT.h) [Code2](https://github.com/Daksh-404/sift)--->
-<!-- [[blog](https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57)] https://vincentqin.tech/posts/superpoint/
---->
+[[PythonSIFT](https://github.com/rmislam/PythonSIFT)] [Tutorial](https://www.aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/) [Code](https://github.com/aishack/sift/blob/master/SIFT.h) [Code2](https://github.com/Daksh-404/sift)
+[[blog](https://saraswathimamidala30.medium.com/superpoint-self-supervised-interest-point-detection-and-description-7d6b7b0ccf57)] https://vincentqin.tech/posts/superpoint/
+
 
 ### 图像配准
 Starting from a metric reconstruction, new images can be registered to the current model by solving the Perspective-n-Point (PnP) problem [18] using feature correspondences to triangulated points in already registered images (2D-3D correspondences).
@@ -170,16 +172,4 @@ PnP（Perspective-n-Point）是求解 3D 到 2D 点对运动的方法。它描�
 
 ### QA：SfM与vSLAM的区别与联系
 
-
-
-
-## 四、多视图立体匹配
-
-+ PlaneSweeping
-
-+ PatchMatch
-
-+ DeepLearning
-
-
-## 五、表面重建
+--->
