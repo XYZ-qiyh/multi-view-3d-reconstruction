@@ -104,9 +104,9 @@
     <td><img src="figures/datasets/ETH3D_courtyard.JPG" width="500"></td>
   </tr>
   <tr>
-    <td>DTU_scan83</td>
-    <td>Tanks and Temples_Truck</td>    
-    <td>ETH3D_courtyard</td>
+    <td>DTU (scan83)</td>
+    <td>Tanks and Temples (Truck)</td>    
+    <td>ETH3D (courtyard)</td>
   </tr>
 </table>
 
