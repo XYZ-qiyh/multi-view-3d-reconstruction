@@ -177,3 +177,7 @@ PnP（Perspective-n-Point）是求解 3D 到 2D 点对运动的方法。它描�
 ### QA：SfM与vSLAM的区别与联系
 
 --->
+
+## 博客
++ 基于colmap的三维重建：https://www.cnblogs.com/Todd-Qi/p/10792685.html
++ 基于Poisson的表面重建：https://www.cnblogs.com/Todd-Qi/p/14382577.html
