@@ -186,12 +186,12 @@ PnP（Perspective-n-Point）是求解 3D 到 2D 点对运动的方法。它描�
 
 基于传统PatchMatch的多视图三维重建：https://github.com/XYZ-qiyh/Awesome-PatchMatch-MVS
 
-
+<!--
 ## 五、表面重建
 
 基于PoissonRecon的表面重建：https://www.cnblogs.com/Todd-Qi/p/14382577.html
 
-<!--
+
 ## 六、深度图渲染
 TODO
 --->
