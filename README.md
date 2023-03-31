@@ -196,10 +196,10 @@ PnP（Perspective-n-Point）是求解 3D 到 2D 点对运动的方法。它描�
 TODO
 
 
+--->
 <details>
   <summary> 多视图三维重建交流群 </summary>
   添加本人VX: darknet_6688, 拉你进群，添加好友请备注，谢谢！（群成员超过200人后无法通过扫码进群）
 </details>
   
 
---->
