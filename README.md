@@ -185,27 +185,3 @@ PnP（Perspective-n-Point）是求解 3D 到 2D 点对运动的方法。它描�
 基于深度学习的MVS方法汇总：https://github.com/XYZ-qiyh/Awesome-Learning-MVS
 
 基于传统PatchMatch的多视图三维重建：https://github.com/XYZ-qiyh/Awesome-PatchMatch-MVS
-
-<!--
-## 五、表面重建
-
-基于PoissonRecon的表面重建：https://www.cnblogs.com/Todd-Qi/p/14382577.html
-
-
-## 六、深度图渲染
-TODO
-
-<details>
-  <summary> 多视图三维重建交流群 </summary>
-  添加本人VX: darknet_6688, 拉你进群，添加好友请备注，谢谢！（群成员超过200人后无法通过扫码进群）
-</details>
-  
-
-<details>
-  <summary> 多视图三维重建交流群 </summary>
-  添加本人VX: darknet_6688, 拉你进群，添加好友请备注，谢谢！（群成员超过200人后无法通过扫码进群）
-</details>
-  
-
---->
-
